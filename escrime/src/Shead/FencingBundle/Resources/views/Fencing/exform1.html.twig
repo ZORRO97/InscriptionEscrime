@@ -1,0 +1,21 @@
+<h1> formulaire avec twig</h1>
+
+<p></p>
+
+<form action="">
+	<label for="{{ form.name.vars.id }}"
+    class="{{ form.name.vars.required ? 'required' : '' }}">
+    {{ form.name.vars.label }}
+	</label>
+	{# affiche un widget, mais y ajoute une classe "foo" #}
+{{ form_widget(form.name, { 'attr': {'class': 'foo'} }) }}
+</form>
+{% block field_row %}
+{% spaceless %}
+    <div class="form_row">
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+    </div>
+{% endspaceless %}
+{% endblock field_row %}

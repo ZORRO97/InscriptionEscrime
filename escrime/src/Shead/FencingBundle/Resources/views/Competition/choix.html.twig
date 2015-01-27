@@ -1,0 +1,44 @@
+{% extends 'SheadFencingBundle::layout.html.twig' %}
+{% block content %}
+
+
+    <h1>Competitions pour le club {{ idClub }}</h1>
+
+    <table class="records_list table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Lieu</th>
+                <th>Datec</th>
+                <th>Arme</th>
+                <th>Categorie</th>
+                <th>Sexe</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('competition_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.lieu }}</td>
+                <td>{% if entity.datec %}{{ entity.datec|date('Y-m-d H:i') }}{% endif %}</td>
+                <td>{{ entity.arme }}</td>
+                <td>{{ entity.categorie }}</td>
+                <td>{{ entity.sexe }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('competition_club_edit', { 'id': entity.id,'clubId': idClub}) }}">Inscrits</a>
+                    </li>
+                   
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+   
+    {% endblock %}

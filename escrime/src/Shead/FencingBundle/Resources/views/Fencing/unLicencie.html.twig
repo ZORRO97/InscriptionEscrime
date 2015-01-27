@@ -1,0 +1,57 @@
+<body>
+	
+
+<h1>
+	Licenciés d'un club
+</h1>
+<table>
+
+<tr>
+	<th>CODE</th>
+	<th>NOM</th>
+	<th>VILLE</th>
+	<th>ZONE</th>
+	<th>LIGUE</th>
+	<th>DEPARTEMENT</th>
+
+</tr>
+
+
+<tr>
+	<td>{{ club.code }}</td>
+	<td>{{ club.nom }}</td>
+	<td>{{ club.ville }}</td>
+	<td>{{ club.zone }}</td>
+	<td>{{ club.ligue }}</td>
+	<td>{{ club.nodep }}</td>
+
+</tr>
+   
+
+
+</table>
+
+
+<h3>Licenciés du club</h3>
+
+<table>
+	<tr>
+		<th>Code</th>
+		<th>Nom</th>
+		<th>Prénom</th>
+		<th>Date de naissance</th>
+	</tr>
+	{% if licencie is not empty %}
+		<tr>
+			<td> {{ licencie.codet }} </td>
+			<td> {{ licencie.nom }} </td>
+			<td> {{ licencie.prenom }} </td>
+			<td> {{ licencie.daten }} </td>
+		</tr>
+	    
+	{% endif %}		
+</table>
+
+
+
+</body>

@@ -1,0 +1,81 @@
+shead_fencing_homepage:
+    path:     /
+    defaults: { _controller: SheadFencingBundle:Default:index }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile    
+
+shead_mail:
+    pattern: /mail/{name}
+    defaults: { _controller: SheadFencingBundle:Fencing:mail }
+
+shead_flmail:
+    pattern: /flmail/{name}/{email}
+    defaults: { _controller: SheadFencingBundle:Fencing:mailService }
+
+shead_fencing_database:
+    pattern:  /admin/nouvelleBase
+    defaults: { _controller: SheadFencingBundle:Fencing:nouvelleBase }
+
+shead_fencing_nouvel_utilisateur:
+    pattern: /newUser
+    defaults: { _controller: SheadFencingBundle:Fencing:newUser }
+
+shead_fencing_liste_utilisateur:
+    pattern: /listeUser
+    defaults: { _controller: SheadFencingBundle:Fencing:listeUser }
+
+shead_fencing_liste_club:
+    pattern: /listeClub
+    defaults: { _controller: SheadFencingBundle:Fencing:listeClub }
+
+shead_fencing_liste_club_page:
+    pattern: /listeClub/page
+    defaults: { _controller: SheadFencingBundle:Fencing:listeClub2 }
+
+shead_fencing_licencies_club:
+    pattern: /unClub/{club_id}
+    defaults: { _controller: SheadFencingBundle:Fencing:unClub }
+
+shead_fencing_licencie_club:
+    pattern: /licencie/{codeClub}/{codeTireur}
+    defaults: { _controller: SheadFencingBundle:Fencing:unLicencie }
+
+shead_fencing_save_licencies_club:
+    pattern: /saveLicencies/{club_id}
+    defaults: { _controller: SheadFencingBundle:Fencing:saveLicencies }
+
+
+
+SheadFencingBundle_competition:
+        resource: "@SheadFencingBundle/Resources/config/routing/competition.yml"
+        prefix:   /competition    
+
+shead_arbitre:
+    pattern: /arbitre/liste
+    defaults: { _controller: SheadFencingBundle:Arbitre:show }
+
+shead_arbitre_page :
+    pattern: /arbitre/page
+    defaults: { _controller: SheadFencingBundle:Arbitre:listeArbitre }
+
+shead_conception:
+    pattern: /conception
+    defaults: { _controller: SheadFencingBundle:Fencing:Conception }        
+

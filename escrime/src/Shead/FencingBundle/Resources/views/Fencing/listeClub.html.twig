@@ -1,0 +1,53 @@
+{% extends 'SheadFencingBundle::layout.html.twig' %}
+{% block content %}
+
+
+<h1>
+	Liste des clubs
+</h1>
+<table class="table">
+
+<tr>
+	<th>CODE</th>
+	<th>NOM</th>
+	<th>VILLE</th>
+	<th>ZONE</th>
+	<th>LIGUE</th>
+	<th>DEPARTEMENT</th>
+	<th>Détails</th>
+	<th>Engagements</th>
+
+</tr>
+
+{% for club in clubs %}
+<tr>
+	<td>{{ club.code }}</td>
+	<td>{{ club.nom }}</td>
+	<td>{{ club.ville }}</td>
+	<td>{{ club.zone }}</td>
+	<td>{{ club.ligue }}</td>
+	<td>{{ club.nodep }}</td>
+	<td>
+		<a href=" {{ path('shead_fencing_licencies_club', { club_id: club.id }  )}} ">
+			<button>
+			Détails	
+			</button>
+		</a>
+	</td>
+	<td>
+		{% if is_granted("ROLE_CLUB") %}
+		<a href=" {{ path('competition_club', { id: club.id }  )}} ">
+			<button>
+			Détails	
+			</button>
+		</a>
+		{% endif %}
+	</td>
+</tr>
+   
+{% endfor %}
+
+
+
+</table>
+{% endblock %}

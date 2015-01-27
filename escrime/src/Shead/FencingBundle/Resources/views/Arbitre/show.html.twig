@@ -1,0 +1,35 @@
+{% extends 'SheadFencingBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Arbitres</h1>
+    <table class="table">
+    <tr>
+    	<th>Nom</th>
+    	<th>Prénom</th>
+    	<th>Club</th>
+    	<th>EPEE</th>
+    	<th>FLEURET</th>
+    	<th>SABRE</th>
+    </tr>
+     {% for arb in entities %}
+                
+                    <tr>
+                    <td>{{ arb.licencie.nom }}</td>
+                    <td>{{ arb.licencie.prenom }}</td>
+
+                    <td> {{ arb.licencie.club.nom }} </td>
+
+                    <td>{{ arb.arbE }}</td>
+                    <td>{{ arb.arbF }}</td>
+                    <td>{{ arb.arbS }}</td>
+                    
+                    </tr>
+                    
+                
+                     
+            {% endfor %}      	
+    </table>
+
+    
+{% endblock %}

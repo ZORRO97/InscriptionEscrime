@@ -1,0 +1,94 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	{% block topNav %}
+		{% include 'SheadFencingBundle:Static:topnav.html.twig' %}
+	{% endblock %}
+
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+
+                {% block sideNav %}
+
+                    {% include 'SheadFencingBundle:Static:sidenav.html.twig' %} 
+                    
+                {% endblock %}
+
+            </div>
+
+            <div class="col-md-9">
+
+                <div id="content-wrapper">
+                    {% block content %}
+                        {# emplacement destiné à l'affichage des templates twig  #}
+                    {% endblock %}
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    {% block footer %}
+
+        {% include 'SheadFencingBundle:Static:footer.html.twig' %}
+    {% endblock %}
+	
+
+	
+	<!-- <div id="main-menu-bg"></div> -->
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+            // //$('#cherchez').hide(); // cacher la liste de résultats au départ
+
+            // $('.searchinput').keyup(function(e){
+            //     {# console.log($(this).val()); #}
+            //     e.preventDefault();
+            //     var word=$(this).val();
+            //     var url=$(this).attr('data_url');
+            //     var form=$(this).parent();
+            //     $.ajax({
+            //         url: url,
+            //         dataType: "json",
+            //         data: "recherche="+word
+
+            //     })
+            //             .done(function(data){
+            //         // traitement de la réponse
+            //                 $('#recherche').html("<p>Résultats recherche</p> ");
+            //                 $('#cherchez').empty();
+            //         if (data.length > 0) {
+            //             //var  ul = $('<ul id="cherchez">');
+            //             //console.log(ul);
+            //             for (var i=0; i<data.length;i++){
+            //               //console.log('<li>'+data[i]['film']+'</li>');
+            //                // $('#recherche')
+            //                  //       .append('<li>'+'<a href='+data[i]['url']+">" +data[i]['film']+'</a></li>');
+            //                 var li='<li>'+'<a href='+data[i]['url']+">" +data[i]['film']+'</a></li>';
+            //                 $('#recherche').append(li);
+            //                 $('#cherchez').append(li);
+            //             }
+            //             // afficher dans la div
+
+            //             //$('#recherche').append(ul);
+            //             //form.after(ul); // placer les résultats après le formulaire
+            //         }
+            //         // console.log(data.length);
+
+            //     });
+            // });
+
+        });
+
+        {# Attention à ne pas se faire lessiver par AJAX #}
+
+    </script>
+{% endblock javascripts %}

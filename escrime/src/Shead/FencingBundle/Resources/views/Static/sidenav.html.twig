@@ -1,0 +1,28 @@
+ <!-- Left column -->
+      
+      <h1 class="text-center">ESCRIME</h1>
+      <h2 class="text-center">Gestion engagements</h2>
+      <ul class="list-unstyled">
+        <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">
+          
+          </a>
+            <ul class="list-unstyled collapse in" id="userMenu">
+                <li class="active"> 
+                  <a href="{{ path('shead_fencing_homepage',{'name':"escrimeur" }) }}">
+                  <i class="glyphicon glyphicon-home"></i>
+                   Accueil
+                  </a>
+                </li>
+                <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Contact </li>
+                <li><a href="{{ path('shead_fencing_liste_club') }}"><i class="glyphicon glyphicon-cog"></i> Liste des clubs</a></li>
+                <li><a href="{{ path('competition') }}"><i class="glyphicon glyphicon-comment"></i> Compétitions </a></li>
+                <li><a href="{{ path('shead_arbitre') }}"><i class="glyphicon glyphicon-user"></i> Arbitres </a></li>
+                <li><a href="{{ path('shead_arbitre_page') }}"><i class="glyphicon glyphicon-user"></i> Arbitres avec Paginator</a></li>
+                <li><a href="{{ path('shead_conception') }}"><i class="icon-suitcase"></i>Conception</a></li>
+            </ul>
+        </li>
+        
+      <hr>
+      
+      
+  	<!-- /col-3 -->

@@ -1,0 +1,53 @@
+{% extends 'SheadFencingBundle::layout.html.twig' %}
+
+{% block content %}
+
+    <h1>Competition edit</h1>
+
+    {# {{ form(edit_form) }} méthode pour rendre le formulaire en une ligne #}
+
+ 
+{{ form_start(edit_form) }}
+	
+
+	{# Render multiple embedded forms #}
+	<h3>Tireurs inscrits</h3>
+	<table class="table">
+	    {% for tireur in edit_form.licencies %}
+
+		    <tr>
+		    	<td> {{ form_widget(tireur) }} </td>
+		    	<td> {{ form_label(tireur) }} </td>
+		    	<td> {{ form_errors(tireur) }} </td>
+		    </tr>
+	    
+	    {% endfor %}
+	</table>
+
+	{# Render multiple embedded forms #}
+	<h3>Arbitres</h3>
+	<table class="table">
+	    {% for arbitre in edit_form.arbitres %}
+
+		    <tr>
+		    	<td> {{ form_widget(arbitre) }} </td>
+		    	<td> {{ form_label(arbitre) }} </td>
+		    	<td> {{ form_errors(arbitre) }} </td>
+		    </tr>
+	    
+	    {% endfor %}
+	</table>
+
+{{ form_end(edit_form) }}
+
+
+
+    <ul class="record_actions">
+	    <li>
+	        <a href="{{ path('competition') }}">
+	            Back to the list
+	        </a>
+	    </li>
+    
+	</ul>
+{% endblock %}

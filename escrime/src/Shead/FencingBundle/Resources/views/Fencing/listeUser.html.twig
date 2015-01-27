@@ -1,0 +1,22 @@
+<h1>
+	Liste des utilisateurs
+</h1>
+<table>
+
+<tr>
+	<th>NOM</th>
+	<th>PRENOM</th>
+	<th>QUALITE</th>
+</tr>
+
+{% for utilisateur in utilisateurs %}
+<tr>
+	<td>{{ utilisateur.nom }}</td>
+	<td>{{ utilisateur.prenom }}</td>
+	<td>{{ utilisateur.qualite }}</td>
+
+</tr>
+   
+{% endfor %}
+
+</table>

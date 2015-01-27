@@ -1,0 +1,13 @@
+
+{# exemple de rendu de formulaire #}
+{{ form_label(form.emails) }}
+{{ form_errors(form.emails) }}
+
+<ul>
+{% for emailField in form.emails %}
+    <li>
+        {{ form_errors(emailField) }}
+        {{ form_widget(emailField) }}
+    </li>
+{% endfor %}
+</ul>

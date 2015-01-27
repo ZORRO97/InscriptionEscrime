@@ -1,0 +1,43 @@
+competition:
+    path:     /
+    defaults: { _controller: "SheadFencingBundle:Competition:index" }
+
+competition_club:
+    path:     /club/{id}
+    defaults: { _controller: "SheadFencingBundle:Competition:listeClub" }
+
+competition_show:
+    path:     /{id}/show
+    defaults: { _controller: "SheadFencingBundle:Competition:show" }
+
+competition_new:
+    path:     /new
+    defaults: { _controller: "SheadFencingBundle:Competition:new" }
+
+competition_create:
+    path:     /create
+    defaults: { _controller: "SheadFencingBundle:Competition:create" }
+    requirements: { _method: post }
+
+competition_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SheadFencingBundle:Competition:edit" }
+
+competition_update:
+    path:     /{id}/update
+    defaults: { _controller: "SheadFencingBundle:Competition:update" }
+    requirements: { _method: post|put }
+
+competition_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SheadFencingBundle:Competition:delete" }
+    requirements: { _method: post|delete }
+
+competition_club_edit:
+    path:     /{id}/{clubId}/show
+    defaults: { _controller: "SheadFencingBundle:Competition:editTireurClub" }
+
+competition_club_update:
+    path:     /{id}/{clubId}/update
+    defaults: { _controller: "SheadFencingBundle:Competition:updateTireurClub" }
+    # requirements: { _method: post|put }
